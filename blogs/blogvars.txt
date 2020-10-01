@@ -1,3 +1,11 @@
+var PHALLUSFERRUS = {   title: 'PHALLUSFERRUS',
+   locat: 'blogs/201001.html',
+   topic: 'thoughts',
+   chron: 201001,
+   pub:    2010010353,
+   blurb: 'Its the night after the debates and I\'ve moved my website...',
+};
+
 var PHOSPHINE = {   title: 'PHOSPHINE',
    locat: 'blogs/200913.html',
    topic: 'thoughts',

@@ -7,7 +7,7 @@ read -p "Do you have a new blog to convert?" yn
 	esac
 echo done
 echo hello!
-cd /home/sequoia/Desktop/glasshand/glasshand.github.io
+cd /home/tester/backup/phallusferrus.github.io
 python pyblog.py
 echo donzo
 echo giterdonzo?
