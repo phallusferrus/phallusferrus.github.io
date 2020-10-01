@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body {
+background-image: url('picss/fractalbg.jpg');
+}
+
+
+#navbar {
+color: #0066ff;
+width: 80%;
+background-color: white;
+text-align: center;
+
+}
+
+#blogtable {
+width: 80%;
+text-align: center;
+border: 2px solid black;
+
+}
+
+</style>
+
+
+<title>BLOG</title>
+<script language="JavaScript">
+
+var TAST1 = {   title: 'TAST1',
+   locat: 'blogs/tasterblog1.html',
+   topic: 'dev',
+   chron: 200503,
+   pub:    2005030713,
+   blurb: 'My first test blog :)...',
+
+};
+
+var ALEXANDROS = {   title: 'ALEXANDROS',
+   locat: 'blogs/alexandros.html',
+   topic: 'gaym',
+   chron: 200401,
+   pub:    2005030713,
+   blurb: 'The life and times of Doux Alexandros...',
+
+};
+
+var LIVEPD = {   title: 'LIVEPD',
+   locat: 'blogs/livepdblog.html',
+   topic: 'dev',
+   chron: 200502,
+   pub:    2005030714,
+   blurb: 'I watched LivePD when I wrote this website...',
+
+};
+
+var TAST3 = {   title: 'TAST3',
+   locat: 'blogs/mythirdtast.html',
+   topic: 'thoughts',
+   chron: 200402,
+   pub:    2005030714,
+   blurb: 'I dont remember what this has to say tbh. Probably not much...',
+
+};
+
+var ONROWJIMMY = {   title: 'ONROWJIMMY',
+   locat: 'blogs/onrowjimmy.html',
+   topic: 'dead',
+   chron: 200420,
+   pub:    2005030715,
+   blurb: 'My thoughts on the song Row Jimmy...',
+
+};
+
+var TAST2 = {   title: 'TAST2',
+   locat: 'blogs/2test.html',
+   topic: 'thoughts',
+   chron: 200403,
+   pub:    2005030717,
+   blurb: 'Yeah...I know I did this out of order......',
+
+};
+
+var TAST4 = {   title: 'TAST4',
+   locat: 'blogs/tast4.html',
+   topic: 'thoughts',
+   chron: 200405,
+   pub:    2005030718,
+   blurb: 'The Fourth and (maybe) final tast...',
+
+};
+
+
+
+var indicies = ["blogs/tasterblog1.html","blogs/alexandros.html","blogs/livepdblog.html","blogs/mythirdtast.html","blogs/onrowjimmy.html","blogs/2test.html","blogs/tast4.html",];
+var obies = [TAST1,ALEXANDROS,LIVEPD,TAST3,ONROWJIMMY,TAST2,TAST4,];
+var titleindex = ['title0','title1','title2','title3','title4','title5','title6',];
+
+function display() {
+
+	var i;
+
+	for (i = 0; i < indicies.length; i++) {
+
+		var intex = indicies[i];
+                var title = titleindex[i];
+                var objecto = obies[i];
+		document.getElementById(intex).innerHTML = objecto.blurb;
+                document.getElementById('date'+title).innerHTML = objecto.chron.toString();
+                document.getElementById(title).innerHTML = objecto.title};
+}
+
+</script>
+</head>
+
+<body onload='display();'>
+<table align=center  id="navbar">
+<tr>
+<td><a href='index.html'>HOME</a></td>
+<td>*</td>
+<td><a href='blog.html'>BLOG</a></td><td>*</td>
+<td><a href='dead.html'>GRATEFULDEAD</a></td><td>*</td>
+<td><a href='tarot.html'>TAROT</a></td><td>*</td>
+<td><a href='game.html'>GAME</a></td><td>*</td>
+<td><a href='contact.html'>CONTACT</a></td>
+</tr>
+</table>
+<table id='blogtable'>
+<tr><td><h1>TITLE</h1></td><td><h1>-</h1></td><td><h1>DATE</h1></td><td><h1>-</h1></td><td><h1>BLURB</h1></td></tr>
+<tr>
+<td><a id='title0'href='blogs/tasterblog1.html'>BLOGS/TASTERBLOG1.HTML </td><td>-</td> <td><p id='datetitle0'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/tasterblog1.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title1'href='blogs/alexandros.html'>BLOGS/ALEXANDROS.HTML </td><td>-</td> <td><p id='datetitle1'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/alexandros.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title2'href='blogs/livepdblog.html'>BLOGS/LIVEPDBLOG.HTML </td><td>-</td> <td><p id='datetitle2'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/livepdblog.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title3'href='blogs/mythirdtast.html'>BLOGS/MYTHIRDTAST.HTML </td><td>-</td> <td><p id='datetitle3'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/mythirdtast.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title4'href='blogs/onrowjimmy.html'>BLOGS/ONROWJIMMY.HTML </td><td>-</td> <td><p id='datetitle4'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/onrowjimmy.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title5'href='blogs/2test.html'>BLOGS/2TEST.HTML </td><td>-</td> <td><p id='datetitle5'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/2test.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title6'href='blogs/tast4.html'>BLOGS/TAST4.HTML </td><td>-</td> <td><p id='datetitle6'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/tast4.html'>XXXXXX XXXXXX</p></td>
+</tr></table>
+</body>
+</html>

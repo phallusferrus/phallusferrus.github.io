@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body {
+	background-image: url('picss/fractalbg.jpg');
+}
+
+.center {
+	padding: 70px 0;
+	border: 3px solid green;
+	text-align: center;
+}
+
+#navbar {
+	color: #0066ff;
+	width: 80%;
+	background-color: white;
+	text-align: center;
+
+}
+
+</style>
+
+	<script language='JavaScript'>
+		var cards = ["The Fool", "The Magician", "The High Priestess", "The Empress", "The Emperor", "The Hierophant", "The Lovers", "The Chariot", "Strength", "The Hermit", "The Wheel of Fortune", "Justice", "The Hanged Man", "Death", "Temperance", "The Devil", "The Tower", "The Star", "The Moon", "The Sun", "Judgement", "The World", "Ace of Wands", "Two of Wands", "Three of Wands", "Four of Wands", "Five of Wands", "Six of Wands", "Seven of Wands", "Eight of Wands", "Nine of Wands", "Ten of Wands", "Knave of Wands", "Knight of Wands", "Queen of Wands", "King of Wands", "Ace of Coins", "Two of Coins", "Three of Coins", "Four of Coins", "Five of Coins", "Six of Coins", "Seven of Coins", "Eight of Coins", "Nine of Coins", "Ten of Coins", "Knave of Coins", "Knight of Coins", "Queen of Coins", "King of Coins", "Ace of Cups", "Two of Cups", "Three of Cups", "Four of Cups", "Five of Cups", "Six of Cups", "Seven of Cups", "Eight of Cups", "Nine of Cups", "Ten of Cups", "Knave of Cups", "Knight of Cups", "Queen of Cups", "King of Cups", "Ace of Swords", "Two of Swords", "Three of Swords", "Four of Swords", "Five of Swords", "Six of Swords", "Seven of Swords", "Eight of Swords", "Nine of Swords", "Ten of Swords", "Knave of Swords", "Knight of Swords", "Queen of Swords", "King of Swords"];
+var pics = ["picss/tarot/00.png", "picss/tarot/01.png", "picss/tarot/02.png", "picss/tarot/03.png", "picss/tarot/04.png", "picss/tarot/05.png", "picss/tarot/06.png", "picss/tarot/07.png", "picss/tarot/08.png", "picss/tarot/09.png", "picss/tarot/10.png", "picss/tarot/11.png", "picss/tarot/12.png", "picss/tarot/13.png", "picss/tarot/14.png", "picss/tarot/15.png", "picss/tarot/16.png", "picss/tarot/17.png", "picss/tarot/18.png", "picss/tarot/19.png", "picss/tarot/20.png", "picss/tarot/21.png", "picss/tarot/22.png", "picss/tarot/23.png", "picss/tarot/24.png", "picss/tarot/25.png", "picss/tarot/26.png", "picss/tarot/27.png", "picss/tarot/28.png", "picss/tarot/29.png", "picss/tarot/30.png", "picss/tarot/31.png", "picss/tarot/32.png", "picss/tarot/33.png", "picss/tarot/34.png", "picss/tarot/35.png", "picss/tarot/36.png", "picss/tarot/37.png", "picss/tarot/38.png", "picss/tarot/39.png", "picss/tarot/40.png", "picss/tarot/41.png", "picss/tarot/42.png", "picss/tarot/43.png", "picss/tarot/44.png", "picss/tarot/45.png", "picss/tarot/46.png", "picss/tarot/47.png", "picss/tarot/48.png", "picss/tarot/49.png", "picss/tarot/50.png", "picss/tarot/51.png", "picss/tarot/52.png", "picss/tarot/53.png", "picss/tarot/54.png", "picss/tarot/55.png", "picss/tarot/56.png", "picss/tarot/57.png", "picss/tarot/58.png", "picss/tarot/59.png", "picss/tarot/60.png", "picss/tarot/61.png", "picss/tarot/62.png", "picss/tarot/63.png", "picss/tarot/64.png", "picss/tarot/65.png", "picss/tarot/66.png", "picss/tarot/67.png", "picss/tarot/68.png", "picss/tarot/69.png", "picss/tarot/70.png", "picss/tarot/71.png", "picss/tarot/72.png", "picss/tarot/73.png", "picss/tarot/74.png", "picss/tarot/75.png", "picss/tarot/76.png", "picss/tarot/77.png"];
+var choice = Math.floor((Math.random() * 78) + 0);
+function CardDraw() {
+	document.getElementById("tarot").innerHTML = cards[choice]
+	document.getElementById("card").src = pics[choice]
+	choice = Math.floor((Math.random() * 78) + 0);
+}
+
+	</script>
+
+</head>
+
+<body>
+
+	<table align=center  id="navbar">
+	<tr>
+		<td><a href='index.html'>HOME</a></td>
+		<td>*</td>
+		<td><a href='blog.html'>BLOG</a></td><td>*</td>
+		<td><a href='dead.html'>GRATEFULDEAD</a></td><td>*</td>
+		<td><a href='tarot.html'>TAROT</a></td><td>*</td>
+		<td><a href='game.html'>GAME</a></td><td>*</td>
+		<td><a href='contact.html'>CONTACT</a></td>
+	</tr>
+	</table><br><br><br>
+
+
+
+	<div class="center">
+		<h1>INTVS QVAERE</h1><br><br><br>
+  <p>
+  <img id="card" src="picss/tarot/xxback" width="400px" height="659px"    style="align-center" alt="Your Tarot Card is lost"/>
+  </p>
+  <h2 id="tarot">CONSULT THE FATES</h2>
+  <button type="button" onclick="CardDraw()">*Flip a Card*</button>
+</div>
+
+</body>
+
+
+</html>

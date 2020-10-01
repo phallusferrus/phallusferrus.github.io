@@ -1,0 +1,14 @@
+
+read -p "Do you have a new blog to convert?" yn
+	case $yn in
+		[Yy]* ) echo yesir; python txtconvert.py;;
+		[Nn]* ) echo NO recieved;;
+		* ) echo "Please enter [y]es or [n]";;
+	esac
+echo done
+echo hello!
+cd /home/sequoia/Desktop/glasshand/glasshand.github.io
+python pyblog.py
+echo donzo
+echo giterdonzo?
+

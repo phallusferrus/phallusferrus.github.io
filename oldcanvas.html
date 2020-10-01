@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+h1 {
+	color: #66023c;
+	text-align: left;
+}
+
+</style>
+
+<title>CanvasDemo</title>
+</head>
+
+<body>
+	<img id='exampl' width='200' height='100' src='picss/Ineedamiracle.png' alt='miracler'>
+
+	<canvas id="demoCanvas" width="200" height="100"></canvas>
+	<br>
+	<canvas id="twoCanvas" width='200' height='100'></canvas>
+	<canvas id='theClock' width=400' height='400'></canvas>
+
+
+<script language="JavaScript">
+
+/*	var canvas = document.getElementById('demoCanvas');
+	var ctx = canvas.getContext('2d');
+	ctx.fillStyle = '#A8A8A8';
+	ctx.fillRect(5, 10, 150, 75);
+	ctx.moveTo(5,10);
+	ctx.lineTo(155,85);
+	ctx.stroke();
+	ctx.beginPath();
+	ctx.arc(75,42.5,15,0,2*Math.PI);
+	ctx.stroke();
+	var ncanvas = document.getElementById('twoCanvas');
+	var nctx = ncanvas.getContext('2d');
+	var example = document.getElementById('exampl');
+	nctx.drawImage(example, 0,0);
+	var clockCanvas = document.getElementById('theClock');
+	var cctx = clockCanvas.getContext('2d');
+	var radius = clockCanvas.height / 2;
+	cctx.translate(radius, radius);
+	radius = radius * .90;
+	drawClock();
+
+	function drawClock() {
+			drawFace(cctx, radius);
+			var i;
+			while (i < (radius*2)) {
+					if ( i < radius - 3) {
+							cctx.arc(0,0,i,0,2*Math.PI);
+							cctx.fillStyle = 'black';
+							cctx.fill();
+							i++;
+						}
+					else {
+							cctx.arc(0,0,i,0,2*Math.PI);
+							cctx.fillStyle = 'black';
+							cctx.fill();
+							i--;
+						}
+				}/
+			for (i = 10; i < radius; i++) {
+					cctx.arc(0,0,i,0,2*Math.PI);
+					cctx.fillStyle = 'black';
+					cctx.fill();
+				}
+			cctx.arc(0,0,radius, 0, 2*Math.PI);
+			cctx.fillStyle = 'black';
+			cctx.fill();
+		}
+
+	function drawFace(cctx, radius) {
+			cctx.arc(0,0,radius*.9,0,2*Math.PI);
+			cctx.fillStyle = 'white';
+			cctx.fill();
+		}
+
+
+
+
+
+
+
+*/
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+
+datelabel=$(date +%Y%m%d%H%M)
+echo $datelabel
+cd /home/sequoia/Desktop/glasshand/glasshand.github.io
+rm timethree.txt
+mv timetwo.txt timethree.txt
+mv timeone.txt timetwo.txt
+echo $datelabel > timeone.txt
+cd /home/sequoia/Desktop/glasshand/glasshand.github.io/picss/snaps
+rm st3
+mv st2 st3
+mv st1 st2
+rm as3
+mv as2 as3
+mv as1 as2
+rm fs3
+mv fs2 fs3
+mv fs1 fs2
+firefox -P automoog --screenshot st1 https://www.instagram.com/sparktwain/
+firefox -P automoog --screenshot as1 https://www.instagram.com/asmrisacommunity/
+firefox -P automoog --screenshot fs1 https://www.instagram.com/fromstarbucks
+cd /home/sequoia/Desktop/glasshand/glasshand.github.io
+python snoopwriter.py
+cd /home/sequoia/Desktop/glasshand/glasshand.github.io
+git add --all
+git commit -m "Giterdone autotest"
+git push origin master
+echo donzo
+cd /home/sequoia/Desktop/glasshand/glasshand.github.io
+

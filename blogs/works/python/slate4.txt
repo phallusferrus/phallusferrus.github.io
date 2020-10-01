@@ -1,0 +1,112 @@
+
+ffmpeg -i gd_nrps70-05-15d1t01.shn gd_nrps70--01.flac
+
+ffmpeg -i gd_nrps70-05-15d1t02.shn gd_nrps70--02.flac
+
+ffmpeg -i gd_nrps70-05-15d1t03.shn gd_nrps70--03.flac
+
+ffmpeg -i gd_nrps70-05-15d1t04.shn gd_nrps70--04.flac
+
+ffmpeg -i gd_nrps70-05-15d1t05.shn gd_nrps70--05.flac
+
+ffmpeg -i gd_nrps70-05-15d1t06.shn gd_nrps70--06.flac
+
+ffmpeg -i gd_nrps70-05-15d1t07.shn gd_nrps70--07.flac
+
+ffmpeg -i gd_nrps70-05-15d1t08.shn gd_nrps70--08.flac
+
+ffmpeg -i gd_nrps70-05-15d1t09.shn gd_nrps70--09.flac
+
+ffmpeg -i gd_nrps70-05-15d1t10.shn gd_nrps70--10.flac
+
+ffmpeg -i gd_nrps70-05-15d1t11.shn gd_nrps70--11.flac
+
+ffmpeg -i gd_nrps70-05-15d2t01.shn gd_nrps70--12.flac
+
+ffmpeg -i gd_nrps70-05-15d2t02.shn gd_nrps70--13.flac
+
+ffmpeg -i gd_nrps70-05-15d2t03.shn gd_nrps70--14.flac
+
+ffmpeg -i gd_nrps70-05-15d2t04.shn gd_nrps70--15.flac
+
+ffmpeg -i gd_nrps70-05-15d2t05.shn gd_nrps70--16.flac
+
+ffmpeg -i gd_nrps70-05-15d2t06.shn gd_nrps70--17.flac
+
+ffmpeg -i gd_nrps70-05-15d2t07.shn gd_nrps70--18.flac
+
+ffmpeg -i gd_nrps70-05-15d2t08.shn gd_nrps70--19.flac
+
+ffmpeg -i gd_nrps70-05-15d3t01.shn gd_nrps70--20.flac
+
+ffmpeg -i gd_nrps70-05-15d3t02.shn gd_nrps70--21.flac
+
+ffmpeg -i gd_nrps70-05-15d3t03.shn gd_nrps70--22.flac
+
+ffmpeg -i gd_nrps70-05-15d3t04.shn gd_nrps70--23.flac
+
+ffmpeg -i gd_nrps70-05-15d3t05.shn gd_nrps70--24.flac
+
+ffmpeg -i gd_nrps70-05-15d3t06.shn gd_nrps70--25.flac
+
+ffmpeg -i gd_nrps70-05-15d3t07.shn gd_nrps70--26.flac
+
+ffmpeg -i gd_nrps70-05-15d3t08.shn gd_nrps70--27.flac
+
+ffmpeg -i gd_nrps70-05-15d3t09.shn gd_nrps70--28.flac
+
+ffmpeg -i gd_nrps70-05-15d3t10.shn gd_nrps70--29.flac
+
+ffmpeg -i gd_nrps70-05-15d3t11.shn gd_nrps70--30.flac
+
+ffmpeg -i gd_nrps70-05-15d4t01.shn gd_nrps70--31.flac
+
+ffmpeg -i gd_nrps70-05-15d4t02.shn gd_nrps70--32.flac
+
+ffmpeg -i gd_nrps70-05-15d4t03.shn gd_nrps70--33.flac
+
+ffmpeg -i gd_nrps70-05-15d4t04.shn gd_nrps70--34.flac
+
+ffmpeg -i gd_nrps70-05-15d4t05.shn gd_nrps70--35.flac
+
+ffmpeg -i gd_nrps70-05-15d4t06.shn gd_nrps70--36.flac
+
+ffmpeg -i gd_nrps70-05-15d4t07.shn gd_nrps70--37.flac
+
+ffmpeg -i gd_nrps70-05-15d4t08.shn gd_nrps70--38.flac
+
+ffmpeg -i gd_nrps70-05-15d4t09.shn gd_nrps70--39.flac
+
+ffmpeg -i gd_nrps70-05-15d4t10.shn gd_nrps70--40.flac
+
+ffmpeg -i gd_nrps70-05-15d5t01.shn gd_nrps70--41.flac
+
+ffmpeg -i gd_nrps70-05-15d5t02.shn gd_nrps70--42.flac
+
+ffmpeg -i gd_nrps70-05-15d5t03.shn gd_nrps70--43.flac
+
+ffmpeg -i gd_nrps70-05-15d5t04.shn gd_nrps70--44.flac
+
+ffmpeg -i gd_nrps70-05-15d5t05.shn gd_nrps70--45.flac
+
+ffmpeg -i gd_nrps70-05-15d5t06.shn gd_nrps70--46.flac
+
+ffmpeg -i gd_nrps70-05-15d5t07.shn gd_nrps70--47.flac
+
+ffmpeg -i gd_nrps70-05-15d5t08.shn gd_nrps70--48.flac
+
+ffmpeg -i gd_nrps70-05-15d5t09.shn gd_nrps70--49.flac
+
+ffmpeg -i gd_nrps70-05-15d5t10.shn gd_nrps70--50.flac
+
+ffmpeg -i gd_nrps70-05-15d5t11.shn gd_nrps70--51.flac
+
+ffmpeg -i gd_nrps70-05-15d5t12.shn gd_nrps70--52.flac
+
+ffmpeg -i gd_nrps70-05-15d5t13.shn gd_nrps70--53.flac
+
+ffmpeg -i gd_nrps70-05-15d5t14.shn gd_nrps70--54.flac
+
+ffmpeg -i gd_nrps70-05-15d5t15.shn gd_nrps70--55.flac
+
+ffmpeg -i gd_nrps70-05-15d5t16.shn gd_nrps70--56.flac

@@ -1,0 +1,1 @@
+It's looking like its time to roll away the dew. IF all has gone well I just wrote a short python script that can update an html page with new links to these stories...however! They link to us as if we were html pages. We need another layer of abstraction to copy the text contained here into the proper spaces of a pre-fabricated html scaffolding.

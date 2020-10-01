@@ -1,0 +1,348 @@
+skool variable squares:
+	6, 7, 13, 14, 20, 21, 27, 28, 34, 35, 36, 37, 41, 42, 43, 44, 48, 49
+
+Billy variable squares:
+	6, 7, 13, 14, 20, 21, 27, 28, 34, 35, 41, 42, 48, 49
+
+RPS variables:
+	(11, 12, 18 19), ( 20, 27, 34), (32, 33, 39, 40)
+
+bottom txt: 50/25px
+bottom stars: 15px
+clock arm: 10px
+
+
+	1 8  15 22 29 36 43
+	2 9  16 23 30 37 44	
+	3 10 17 24 31 38 45
+	4 11 18 25 32 39 46
+	5 12 19 26 33 40 47
+	6 13 20 27 34 41 48
+	7 14 21 28 35 42 49
+	
+	1 2  3  4  5  6  7
+
+
+
+
+
+blackscreenstart
+Welcome
+DayAtSchool(I get it, joke, help)
+	I get it -> School1
+	joke -> jokescreen -> DayAtSchool
+	help -> helpscreen -> DayAtSchool
+School1 (myfav, teach, spit, aut)
+	myfav -> billy
+	teach -> billy
+	spit -> billy #gbp
+	aut -> billy #aut
+billy1
+billy1a (friend, toys, hate, aut)
+	friend -> school2
+	toys -> school2
+	hate -> school2 #rival
+	aut -> school2	#aut
+school2 (pledge, noway, billy, aut)
+	check autwarn(OK)
+		if -> autwarn -> flag3
+	pledge -> flag1
+	noway -> flag2 #gbp
+	billy -> flag3 #gbp #rival
+	aut -> flag3   #aut
+flagfill
+school3 (billy, draw, smith, aut)
+	check autdone
+		if -> calldad(apologize, whatevs, worse)
+				apologize -> detent -> ??
+				whatevs -> dad
+					dad -> funy -> fin
+				worse -> dadbeat
+					dadbeat -> beatn -> fin
+	check autwarn
+		if -> autwarn -> school3
+	check gbpwarn
+		if -> gbpwarn ->school3
+	billy -> billys
+	draw -> selfs
+	smith -> schools
+	aut -> selfs
+billys/selfs/schools
+	billys -> rpsloop #rival
+	selfs -> picture -> school4
+	schools -> convr -> school4 #gbp
+billys/selfs/schools
+rps/picture/conv
+
+	rps
+		check
+
+school4(cool, wisecrack, billy, aut)
+	check autdone
+		if -> calldad(apologize, whatevs, worse)
+				apologize -> detent -> ??
+				whatevs -> dad
+					dad -> funy -> fin
+				worse -> dadbeat
+					dadbeat -> beatn -> fin
+	check autwarn
+		if -> autwarn -> school4
+	check gbpwarn
+		if -> gbpwarn ->school4
+	chekc gbpdone
+		if -> detent -> ???
+
+
+	cool -> piglatinloop
+	wisecrack -> piglatinloop #gbp
+	billy -> ttoloop #gbp
+	aut -> piglatinloop
+
+piglatinloop/ttoloop(checkrival) #rival
+
+school5(cool, whatevs, billy, aut)
+	
+	check autdone
+			if -> calldad(apologize, whatevs, worse)
+					apologize -> detent -> ??
+					whatevs -> dad
+						dad -> funy -> fin
+					worse -> dadbeat
+						dadbeat -> beatn -> fin
+		check autwarn
+			if -> autwarn -> school5
+		check gbpwarn
+			if -> gbpwarn ->school5
+		chekc gbpdone
+			if -> detent -> ???
+		
+		cool -> romnumloop
+		wisecrack -> romnum #gbp
+		billy -> connectfour
+		aut -> romnumloop
+
+romnumloop/connectfour(check rival) #rival
+skool6
+lunch
+
+	
+rpsintro() - display gameboard and ask for move
+
+rpseval() -  display the moves and check if victory gameover and note who won, else 
+
+rps	
+
+
+tttoe:
+
+Intro / fight?
+explain how to play
+display board
+get move
+get billy move
+check for win
+update board
+
+on draw:
+	print board with DRAW
+
+GIMP WORK:
+afterfight AND function
+tttoeintro ('lets play tttoe')
+tttoewin, loose, and draw AND ALL FUNCTIONS
+
+
+Latin:
+Check GBP and aut
+Intro (Today's lesson blahblah) - latin1()
+What do you know about Rome Anon? - latinintro()
+		1 - I saw them on TV! -> Bigfoot in Roma story
+		2 - They dressed funny -> Dresses, puked story
+		3 - I saw Spartacus -> TV story
+Story shot -  1-3story()
+reaction - 1-3react()
+Roma in Italia est... - romainitalia()
+Latin alphabet - latinalpha()
+skool6() = Our next lesson will be on math (connect4,romnum)
+
+NEED TO ADD EITHER A PASS AFTER WARNINGS OR DELEGATE THEM TO THEIR OWN TURNS. THE WAY IT IS NOW CLICKING CERTAIN 'OK' ON THE WARNING SCREEN WILL DECIDE YOUR GAME VS SCHOOL DECSIONS (AND LIKELY THIS ERROR GOES BACK TO THE OUTSIDE THING TBH...)
+
+
+GBPW() - art done
+
+
+billy2() cant use 2 as indy must be letter
+billy2() ART needs doing. intro? Or...nah? - SHOULD be done
+
+
+rpsjudge drops /das/ in filename - fixed?
+
+YOULOOSE>YOUWIN!
+it seems like the rpsloose doesnt pass gameover token. I just had to click once: draw twice: draw thrid:win? I think...idk im sleepy tbh. OK so loose doesnt end the game, neither does Draw but draw does that by design. I want it to loop until someone wins. Loose has a problem. So precicely the problem is it displays "You loose" then "You win" or "You Draw" and then goes from there. I never see the billywins screen. - FIXED was a typo
+
+
+Double click on rpswin()
+
+Double click on skool(TTO or Latin)
+only had to double click to get to TTO. Latin worked no prob
+
+tttoeboarddraw() is missing the .png suffix - Fixed
+
+Selecting but7 on tttoe throws helpers() and then doest go back to ask for row but continues on to col
+
+doubleclick for pokemon and double click to get back to class
+
+doubleclick to return from outside
+
+TTToe does not change batoners from 1s to letters...and it doesnt recognize victory...(win vs winer easy fix)
+
+the flag does now display the options in textbox but batoner works
+
+
+Double click for house draw and to leave
+
+Tttoe win works now but doesnt display the victory screen before asking for new input...BAD also batoner doesnt changebuttons from a-c still...
+
+
+*Latin or TTTOE*
+#CLICK TTTOE
+*FIGHT? OR INTRO*
+
+
+
+
+intro			mathinrov +1
+can you pick 5/V?	math1 +1
+right or wrong		-math1r +1
+how bout 6/VI?		-math2 +1
+right or wrong		-math2r +1
+99/XCIX?		-math3 +1
+you got 0/1/2/3 answers right
+
+
+
+
+#lunchtime() where ya wanna sit
+
+#lonelunch() just the same view add a table
+#lstare() zoom on billy
+#lstare2() zoom on stacy
+#lstare3() big zoom on stacy
+
+#slunch() hey Stacy hey Betty hey suzy
+#stacyb1() look it's anon
+#stacyb2() ass spawn
+#stacyb3() ur disgusting
+#stacyb4() not smart like Billy
+#stacyc1() what are you doing here
+#stacyc2() I saw you starin
+#stacyc3() No one likes you go away
+#stacyc4() Something sad
+
+#foodfight() wanna throw food at billy
+#foodfighter() covered in sauce
+#lunchdetent() Teacher comes and yells -> Detention
+#blunch() pizza day
+#billylunchchat() School was super boring today
+#playstay() Wana come over to my house after school?
+#playstayya() cool my mom can make snacks
+#playstayah() whatever
+#blshow() what are you gonna show and tell
+#billypokemon() that sucks, you can show one of my pokemon
+#billycard() you can show one of my tarot cards
+#billylol() OMG DO IT
+#lunchup() Lunch times up, I barely had time to eat
+#skool8() Welcome back class
+
+
+snvc
+
+dhome() - 
+bhome() - C'mom my Mom is gonna pick us up!
+skool10() - Ok class looks like we're done for the day
+#sndetent()
+#sntprep() - you showed that you were unprepared for class
+#sntcool() - very cool anon
+#sntfail()
+#sntdetent() - Hides eyes go to pincipal
+#pokesnt() - I brought this pokemon
+#cardsnt() - I brought this tarot card...
+#sntdick() - show dick or nah
+#sntcard() - What you bring? Card or forgot
+#sntpoke() - What you bring? Poke or forgot
+stacysnt() - stacy shows...
+#billysnt() - billy shows a benjie
+#skool9() - its time for show and tell
+
+
+dreact = 0
+bfchar = 'x'
+bfbwin = 0
+bfwon = 0
+
+
+#bletsgo() - cmon my mom's waiting outside
+#bmomout() - Hey billy hey Anon it's really good to see you again
+#bilhome() - in billy's house (take off your shoes)
+#snacks() - Here you boys I go I brought some snacks (thanks!)
+#snhelp() - can you help me in the kitchen Anon?
+#kitchen() - Anon Billy's Dad....
+#letsplay() - C'mon let's play battlefront 2
+#bfone() - pick you character (super, droidica, gonk)
+#bftwob() - show super battle droid
+#bftwod() - show droidicka
+#bftwog() - gonk droid
+#bfthreeb() - random shooting or exploding. mark it as a var (bfbwin)
+#bfthreed() - show droidicka with shields shooting
+#bfthreeg() - show exploding gonkdroid
+#bfwinb() - add victory overlay to super shooting
+#bflooseb() - add defeat overlay to exploding
+#bfwind() - add victory overlay to shooting with shields
+#bflooseg - add defeat overlay
+#nofair() - What no fair you cheated. Shut up billy I fucked your mom
+#suckit() - You suck at this game Anon. You gave me the shitthe controller Billy 
+#seeya() - It's getting late Anon I'll see you tomorrow at school
+#dadsdrinkin() - Hey Dad I'm home. Uhoh Dad smells like he's been drinking
+#backrub() - can you give me a back rub?
+#bedroom() - lets go to my bedroom
+#bra() - oh that feels so good Anon. Here let me take this off
+#nobra() - thats better. You can do anything you want anon.
+#billysmom() - congratulations you fucked billys mom(moans)
+#billysmomtwo() - add cum. "that was amazing anon you can come over whenever you like"
+#billysmomthree() - C'mon I'll give you a ride home
+
+
+#dhome() - Dad outside with a beer c'mon son
+#dadhomeone() - Dad screaming with a beer
+#dadhometwo() - screaming with choices
+#assbeat() - dad get's his belt
+#room() - just in your room
+#beer() - have a beer son
+#beerr()
+#assbeatr() - OWOWOW
+#roomr()
+
+
+fin() - FIN
+
+
+
+scenes:
+	Your house with dad(beer smokes) shitty TV and a poster
+	Your room
+	Billy's house
+	BFTV setup
+	Kitchen
+	Bedroom
+
+
+
+
+detenttime() - 12, 15, 18 > detentgo()
+
+outdetent() - 7
+lunch detent() - 19
+sntdetent() - 24
+
+detentvar = 0;
+detentskar = 0;
