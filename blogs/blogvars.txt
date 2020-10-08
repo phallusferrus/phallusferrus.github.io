@@ -1,3 +1,11 @@
+var SARTORRESARTUS = {   title: 'SARTORRESARTUS',
+   locat: 'blogs/201008.html',
+   topic: 'thoughts',
+   chron: 201008,
+   pub:    2010080510,
+   blurb: 'Personal history, book reviews, and my opinions on the Vice Presidential Debate. ...',
+};
+
 var PHALLUSFERRUS = {   title: 'PHALLUSFERRUS',
    locat: 'blogs/201001.html',
    topic: 'thoughts',
