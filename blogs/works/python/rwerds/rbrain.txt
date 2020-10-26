@@ -1,0 +1,4 @@
+python randletter.py
+. rwerdone.txt
+python linecheck.py
+. lined.txt
