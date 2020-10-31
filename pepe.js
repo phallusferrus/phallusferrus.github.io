@@ -338,7 +338,7 @@ function drawGame() {
 	document.getElementById('dist').innerHTML = allBalls[0].y;
 }
 
-alert('begin!');
+alert('Use WASD to Move!');
 setInterval(drawGame, 42);
 
 
