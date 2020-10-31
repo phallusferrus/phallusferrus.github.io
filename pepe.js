@@ -3,7 +3,8 @@ var ctx = canvas.getContext('2d');
 var height = canvas.height;
 var wide = canvas.width;
 var gameTick = 0;
-
+var gameOverResult = 0;
+var gameScore = 0;
 
 // Define image variables
 
@@ -201,6 +202,50 @@ function movePlayer(dir) {
 	}
 }
 
+function playerCollision(blurb) {
+	gameOverResult = 1;
+	alert("SCORE: "+gameScore);
+	gameScore=1234567;wa
+}
+
+
+function checkPlayerCollision() {
+	hitboxBodx = player.x + 11;
+	hitboxBody = player.y + 2;
+	hitboxBodw = 40;
+	hitboxBodh = 65;
+	if (player.dir == 'r') {
+		hitboxFx = player.x + 13;
+		hitboxFy = player.y + 67;
+		hitboxFw = 51;
+		hitboxFh = 29;
+	} else if (player.dir == 'l') {
+		hitboxFx = player.x;
+		hitboxFy = player.y + 67;
+		hitboxFw = 51;
+		hitboxFh = 29;
+	}
+	else {
+		hitboxFx = player.x;
+		hitboxFy = player.y + 67;
+		hitboxFw = 64;
+		hitboxFh = 29;
+	}
+	for (i=0; i<numBalls; i++) {
+		tBall = allBalls[i];
+		tHitboxx = tBall.x;
+		tHitboxy = tBall.y;
+		tHitboxw = tBall.width;
+		tHitboxh = tBall.height;
+		//Check body hitbox
+		if ( (tHitboxx >= (hitboxBodx -  tHitboxw) && (tHitboxx <= (hitboxBodx + tHitboxw) ) ) && (tHitboxy >= (hitboxBody - tHitboxh) && (tHitboxy <= (hitboxBody + hitboxBodh) )) ) {
+			playerCollision();
+		} else if ( (tHitboxx >= (hitboxFx - tHitboxw) && (tHitboxx <= (hitboxFx + hitboxFw) ) ) && (tHitboxy >= (hitboxFy -  tHitboxh) && (tHitboxy <= (hitboxFy + hitboxFh) )) ) {
+			playerCollision();
+		}
+	}
+}
+
 function drawPlayer(){
 	if (WDown == 1) {
 		movePlayer(1);
@@ -214,7 +259,10 @@ function drawPlayer(){
 	if (SDown == 1) {
 		movePlayer(4);
 	}
-
+	checkPlayerCollision();
+	if (gameOverResult == 1) {
+		alert("COLLISION PEPE");
+	}
 	if (player.motion >= 0) {
 		if (player.legs % 2 == 0) {
 			if (player.dir == 'r') {
@@ -270,19 +318,23 @@ function drawBackground() {
 }
 
 function drawGame() {
+	if (gameScore >= 123456) {
+		alert("GAME OVER!");
+	}
 	if (gameTick == 0) {
-		var ball = new badBalls(300, 300, 64, 64, 1, 1);
+		var ball = new badBalls(300, 30, 64, 64, 1, 1);
 		allBalls[numBalls] = ball;
 		numBalls += 1;
 	}
 	gameTick += 1;
-	if (gameTick % 210 == 0) {
+	if (gameTick % 42 == 0) {
 		spawnBall();
 	}	
 	drawBackground();
 	drawPlayer();
 	drawEntities();
-	document.getElementById('score').innerHTML = allBalls[0].x;
+	gameScore += 1;
+	document.getElementById('score').innerHTML = gameScore;
 	document.getElementById('dist').innerHTML = allBalls[0].y;
 }
 
