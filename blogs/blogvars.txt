@@ -1,3 +1,11 @@
+var DREAMJOURNAL = {   title: 'DREAMJOURNAL',
+   locat: 'blogs/201111.html',
+   topic: 'thoughts',
+   chron: 201111,
+   pub:    2011112159,
+   blurb: 'NOT a satisfactory summary of the past month it\'s just a dream I had...',
+};
+
 var SARTORRESARTUS = {   title: 'SARTORRESARTUS',
    locat: 'blogs/201008.html',
    topic: 'thoughts',
