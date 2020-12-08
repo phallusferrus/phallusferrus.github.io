@@ -1,7 +1,0 @@
-blogs/tasterblog1.html
-blogs/alexandros.html
-blogs/livepdblog.html
-blogs/mythirdtast.html
-blogs/onrowjimmy.html
-blogs/2test.html
-blogs/tast4.html
