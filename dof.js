@@ -27,7 +27,9 @@ var SDown = 0;
 var QDown = 0;
 var EDown = 0;
 var SpaceDown = 0;
-var EscDown = 0;
+function escPause() {
+	alert("PAUSE");
+}
 
 document.addEventListener('keydown', function (e) {
 	if (e.keyCode == 87) {
@@ -49,6 +51,7 @@ document.addEventListener('keydown', function (e) {
 	else if (e.keyCode == 32) {
 		SpaceDown = 0;
 	} else if (e.keyCode == 27) {
+		escPause();
 		EscDown = 1;
 	}
 
@@ -102,6 +105,21 @@ gnusrc.src = 'picss/dof/gnu.png';
 
 var snoosrc = new Image(64, 89);
 snoosrc.src = 'picss/dof/snoo.png';
+var snoo2src = new Image(64, 89);
+snoo2src.src = 'picss/dof/snoo2.png';
+
+var snoo3src = new Image(64, 89);
+snoo3src.src = 'picss/dof/snoo3.png';
+
+var snoo4src = new Image(64, 89);
+snoo4src.src = 'picss/dof/snoo4.png';
+
+var snoo5src = new Image(64, 89);
+snoo5src.src = 'picss/dof/snoo5.png';
+
+var snoo6src = new Image(64, 89);
+snoo6src.src = 'picss/dof/snoo6.png';
+
 
 
 /*
@@ -167,7 +185,7 @@ function rotate(ent) {
 	ang += 5;
 }
 
-function runin(ent) {
+function borderBounce(ent) {
 	if (ent.x <= (25 + ent.width) ) {
 		ent.dx *= -1;
 	} else if (ent.x >= (canvas.width - 25 - ent.width)) {
@@ -179,6 +197,31 @@ function runin(ent) {
 		ent.dy *= -1;
 	}
 }
+
+function snooZap(snoo) {
+	//Constant Rate Change thingy madoot
+	snooZapTimeLimit = 600
+	snoo.age += 1;
+	if (snoo.age >= snooZapTimeLimit) {
+		snoo.age = 0;
+	}
+	if (snoo.age <= (snooZapTimeLimit / 6) ) {
+		snoo.src = snoosrc;
+	} else if (snoo.age <= (snooZapTimeLimit / 3) ) {
+		snoo.src = snoo2src;
+	} else if (snoo.age <= (snooZapTimeLimit / 2) ) {
+		snoo.src = snoo3src;
+	} else if (snoo.age <= ( (2 * snooZapTimeLimit) / 3) ) {
+		snoo.src = snoo4src;
+	} else if (snoo.age <= ( (5 * snooZapTimeLimit) / 6) ) {
+		snoo.src = snoo5src;
+	} else {
+		snoo.src = snoo6src;
+	}
+}
+
+
+
 
 
 
@@ -241,6 +284,19 @@ function moveEnt(ent) {
 	} 
 }
 
+function fxEnt(ent, fx) {
+
+	if (ent.fx == 'rotate') {
+		rotate(ent, ent.x, ent.y);
+	}
+	if (ent.fx == 'borderBounce') {
+		borderBounce(ent);
+	}
+	if (ent.fx == 'snooZap') {
+		snooZap(ent);
+	}
+}
+
 function drawEnts() {
 	for (i=0; i<allENT.length; i++) {
 		ent = allENT[i];
@@ -254,8 +310,11 @@ function drawEnts() {
 		if (ent.fx == 'rotate') {
 			rotate(ent, ent.x, ent.y);
 		}
-		if (ent.fx == 'runin') {
-			runin(ent);
+		if (ent.fx == 'borderBounce') {
+			borderBounce(ent);
+		}
+		if (ent.fx != 0) {
+			fxEnt(ent, ent.fx);
 		}
 		drawEnt(ent.src, ent.x, ent.y);
 	}
@@ -265,18 +324,19 @@ function drawEnts() {
 /*
  *
  *
- * S.7 - GameLogic
+ * S.7 - GameLoic
  *
  *
  * */
 
 
-tripcode = new makeENT(tripsrc, 125, 125, tripsrc.width,tripsrc.height, 1, 1, 'runin');
+tripcode = new makeENT(tripsrc, 125, 125, tripsrc.width,tripsrc.height, 1, 1, 'borderBounce');
 allENT[allENT.length] = tripcode;
-gnu = new makeENT(gnusrc, 300, 300, gnusrc.width, gnusrc.height, 0, -1, 'runin');
+gnu = new makeENT(gnusrc, 300, 300, gnusrc.width, gnusrc.height, 0, -1, 0);
 allENT[allENT.length] = gnu;
-snoo = new makeENT(snoosrc, 420, 215, snoosrc.width, snoosrc.height, 1, 0, 'runin');
+snoo = new makeENT(snoosrc, 420, 215, snoosrc.width, snoosrc.height, 0, 0, 'snooZap');
 allENT[allENT.length] = snoo;
+snoo.age = 0;
 
 function drawGame() {
 	drawBackground(stickysrc, 120, 40);

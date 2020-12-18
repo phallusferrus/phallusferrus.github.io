@@ -1,0 +1,1 @@
+echo $(kjv jdgs32/ b) > linebuffer.txt
