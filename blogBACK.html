@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body {
+background-image: url('picss/fractalbg.jpg');
+}
+
+
+h1 { 
+    text-decoration: underline;
+}
+
+
+#navbar {
+color: #0066ff;
+width: 80%;
+background-color: white;
+text-align: center;
+
+}
+
+#blogtable {
+width: 80%;
+text-align: center;
+border: 2px solid black;
+
+}
+
+</style>
+
+
+<title>BLOG</title>
+<script language="JavaScript">
+
+var DREAMJOURNAL = {   title: 'DREAMJOURNAL',
+   locat: 'blogs/201111.html',
+   topic: 'thoughts',
+   chron: 201111,
+   pub:    2011112159,
+   blurb: 'NOT a satisfactory summary of the past month it\'s just a dream I had...',
+};
+
+var SARTORRESARTUS = {   title: 'SARTORRESARTUS',
+   locat: 'blogs/201008.html',
+   topic: 'thoughts',
+   chron: 201008,
+   pub:    2010080510,
+   blurb: 'Personal history, book reviews, and my opinions on the Vice Presidential Debate. ...',
+};
+
+var PHALLUSFERRUS = {   title: 'PHALLUSFERRUS',
+   locat: 'blogs/201001.html',
+   topic: 'thoughts',
+   chron: 201001,
+   pub:    2010010353,
+   blurb: 'Its the night after the debates and I\'ve moved my website...',
+};
+
+var PHOSPHINE = {   title: 'PHOSPHINE',
+   locat: 'blogs/200913.html',
+   topic: 'thoughts',
+   chron: 200913,
+   pub:    2009130344,
+   blurb: 'Life on Venus? We may find out on Monday....',
+};
+
+var SMOKETWOKINDS = {   title: 'SMOKETWOKINDS',
+   locat: 'blogs/200910.html',
+   topic: 'thoughts',
+   chron: 200910,
+   pub:    2009102053,
+   blurb: 'Wildfires, Minecraft, bong hits, adventure, and heartbreak history. Five years to the day since the sun fell out of the sky...',
+};
+
+var SUMBULLSHIT = {   title: 'SUMBULLSHIT',
+   locat: 'blogs/200822.html',
+   topic: 'thoughts',
+   chron: 200822,
+   pub:    2008221822,
+   blurb: 'Pain Police and a Broken Pipe but at least I Can Breathe...',
+};
+
+var CANTBREATHE = {   title: 'CANTBREATHE',
+   locat: 'blogs/200814.html',
+   topic: 'thoughts',
+   chron: 200814,
+   pub:    2008140524,
+   blurb: 'I can\'t breathe. How can I smoke weed or survive if I can\'t breathe...',
+};
+
+var TWOWEEKSGONE = {   title: 'TWOWEEKSGONE',
+   locat: 'blogs/200730.html',
+   topic: 'thoughts',
+   chron: 200730,
+   pub:    2007300712,
+   blurb: 'Two weeks have passed me by in a stoned haze...',
+};
+
+var GOODLYTHOUSANDS = {   title: 'GOODLYTHOUSANDS',
+   locat: 'blogs/200714.html',
+   topic: 'thoughts',
+   chron: 200714,
+   pub:    2007140333,
+   blurb: 'Made it back from Vancouver today and I saw a comet...',
+};
+
+var HOWTOGOSOUTH = {   title: 'HOWTOGOSOUTH',
+   locat: 'blogs/200710.html',
+   topic: 'thoughts',
+   chron: 200710,
+   pub:    2007100449,
+   blurb: 'Well, this is what I was doing 25 years after the Grateful Dead\'s final concert. I was listening to Miles Davis......',
+};
+
+var HAPPYFOURTH = {   title: 'HAPPYFOURTH',
+   locat: 'blogs/200706.html',
+   topic: 'thoughts',
+   chron: 200706,
+   pub:    2007060350,
+   blurb: 'I\'ve been drinking and eating Subway, that\'s just how I celebrate Independence Day......',
+};
+
+var WITHOUTLOVEINTHEDREAM = {   title: 'WITHOUTLOVEINTHEDREAM',
+   locat: 'blogs/200630.html',
+   topic: 'thoughts',
+   chron: 200630,
+   pub:    2006300057,
+   blurb: 'Words of depression and defeat. Waking up is always accompanied by a terrible feeling of dread and burden. Writing at midnight, eating a sparse breakfast....',
+};
+
+var SUNDAYSUMMERSOLSTICE = {   title: 'SUNDAYSUMMERSOLSTICE',
+   locat: 'blogs/200621.html',
+   topic: 'thoughts',
+   chron: 200621,
+   pub:    2006211931,
+   blurb: 'Floating away on a river. The two banks being life, and death, my raft being consciousness, and the water being time. Mortality and survival are on my mind....',
+};
+
+var CANTEVENWALK = {   title: 'CANTEVENWALK',
+   locat: 'blogs/200612',
+   topic: 'thoughts',
+   chron: 200612,
+   pub:    2006120541,
+   blurb: 'I took a walk last night....',
+};
+
+var SATURDAYSUNRISE = {   title: 'SATURDAYSUNRISE',
+   locat: 'blogs/200606.html',
+   topic: 'thoughts',
+   chron: 200606,
+   pub:    2006060605,
+   blurb: 'My outlook on life after a week of protests while I watch the sun rise behind thick clouds over the Columbia River....',
+};
+
+var ONTHERIOTS = {   title: 'ONTHERIOTS',
+   locat: 'blogs/200530.html',
+   topic: 'thoughts',
+   chron: 200530,
+   pub:    2005300712,
+   blurb: 'My feelings on the current state of America: Riots, revolution, and racism....',
+};
+
+var DAYATSCHOOLRELEASED = {   title: 'DAYATSCHOOLRELEASED',
+   locat: 'blogs/200529.html',
+   topic: 'thoughts',
+   chron: 200529,
+   pub:    2005290713,
+   blurb: 'Just finished Day at School and spent like 15 mins patting myself on the back and a shorter amount of time talking about what my situation has in store....',
+};
+
+var IFOUNDSOMEWEED = {   title: 'IFOUNDSOMEWEED',
+   locat: 'blogs/200527.html',
+   topic: 'thoughts',
+   chron: 200527,
+   pub:    2005271239,
+   blurb: 'I found some weed and I read the Bible (Gen19)...',
+};
+
+var ANDGETTINGSTONED = {   title: 'ANDGETTINGSTONED',
+   locat: 'blogs/200525.html',
+   topic: 'thoughts',
+   chron: 200525,
+   pub:    2005250731,
+   blurb: 'A short narrative of how I feel at the moment and a wonderful story from my youth involving Jared\'s house, food poisoning, a trailer and Getting Stoned....',
+};
+
+var LETTHEREBEBLOGS = {   title: 'LETTHEREBEBLOGS',
+   locat: 'blogs/200519.html',
+   topic: 'thoughts',
+   chron: 200519,
+   pub:    2005190627,
+   blurb: 'Just a quick one after I put this blog section together. Enjoy!...',
+};
+
+var ADAYINTHELIFE = {   title: 'ADAYINTHELIFE',
+   locat: 'blogs/200517.html',
+   topic: 'thoughts',
+   chron: 200517,
+   pub:    2005190609,
+   blurb: 'A day in the life of a nocturnal web-developer in training, and isolation.',
+};
+
+var JKALLEY = {   title: 'JKALLEY',
+   locat: 'blogs/200515.html',
+   topic: 'thoughts',
+   chron: 200515,
+   pub:    2005190607,
+   blurb: 'A nostalgic poem....',
+};
+
+var ALLTHECLIPSCOMBINE = {   title: 'ALLTHECLIPSCOMBINE',
+   locat: 'blogs/200510.html',
+   topic: 'thoughts',
+   chron: 200510,
+   pub:    2005190604,
+   blurb: 'I talk about the Grateful Dead movie (extended edition) and discuss personal updates...I also run out of weed...',
+};
+
+var DAYATSCHOOL = {   title: 'DAYATSCHOOL',
+   locat: 'blogs/200507.html',
+   topic: 'thoughts',
+   chron: 200507,
+   pub:    2005190602,
+   blurb: 'I start working on Day at School and feel better about my life in isolation....',
+};
+
+var MYFEETHURT = {   title: 'MYFEETHURT',
+   locat: 'blogs/200430.html',
+   topic: 'thoughts',
+   chron: 200430,
+   pub:    2005190559,
+   blurb: 'After failing to return to civilization I reflect on my bleak outlook 60 days into quarantine....',
+};
+
+var ONROWJIMMY = {   title: 'ONROWJIMMY',
+   locat: 'blogs/200420.html',
+   topic: 'thoughts',
+   chron: 200420,
+   pub:    2005190558,
+   blurb: 'The first blog I wrote with this website in mind. I listen to Row Jimmy as the pyblog.py script is born....',
+};
+
+var HEADY80SSHOWS = {   title: 'HEADY80SSHOWS',
+   locat: 'blogs/80sdead.html',
+   topic: 'dead',
+   chron: 191201,
+   pub:    2005190548,
+   blurb: 'A list of my favorite shows from the early 80s. I remember typing this out for someone on the dead subreddit. I dont remember when....',
+};
+
+var RAMBLINONVACATION = {   title: 'RAMBLINONVACATION',
+   locat: 'blogs/191123.html',
+   topic: 'thoughts',
+   chron: 191123,
+   pub:    2005190530,
+   blurb: 'Ramblin\' about something and nothing listening to 2/11/70...',
+};
+
+var PLAYINJAMWRITING2 = {   title: 'PLAYINJAMWRITING2',
+   locat: 'blogs/191122.html',
+   topic: 'thoughts',
+   chron: 191122,
+   pub:    2005190524,
+   blurb: 'First day of a week off at work. Reflections while listening to 8/6/74 Playin Jam...',
+};
+
+var PLAYINJAMWRITING = {   title: 'PLAYINJAMWRITING',
+   locat: 'blogs/190826.html',
+   topic: 'thoughts',
+   chron: 190826,
+   pub:    2005190518,
+   blurb: 'I reflect on my place in life while listening to Playin in the Band Veneta 72....',
+};
+
+var AUGFRIDAY = {   title: 'AUGFRIDAY',
+   locat: 'blogs/190823.html',
+   topic: 'thoughts',
+   chron: 190823,
+   pub:    2005190514,
+   blurb: 'A Friday in paradise....',
+};
+
+var SUNDAZE = {   title: 'SUNDAZE',
+   locat: 'blogs/190819.html',
+   topic: 'thoughts',
+   chron: 190819,
+   pub:    2005190502,
+   blurb: 'Sunday summary, saw the Isely Brothers at Stern Grove....',
+};
+
+var AUGUST162019 = {   title: 'AUGUST162019',
+   locat: 'blogs/190816.html',
+   topic: 'thoughts',
+   chron: 190816,
+   pub:    2005190449,
+   blurb: 'Short, confusing, pretty sure something got lost in translation',
+};
+
+var JULY19RAMBLES = {   title: 'JULY19RAMBLES',
+   locat: 'blogs/190719.html',
+   topic: 'thoughts',
+   chron: 190719,
+   pub:    2005190439,
+   blurb: 'A correct prediction and a stream of consciousness....',
+};
+
+var MYTHOUGHTS = {   title: 'MYTHOUGHTS',
+   locat: '190616.html',
+   topic: 'thoughts',
+   chron: 190616,
+   pub:    2005190423,
+   blurb: 'A timely observation and a wise conclusion, though ultimately in vain',
+};
+
+var MAELRETURNS = {   title: 'MAELRETURNS',
+   locat: 'blogs/maelreturns.html',
+   topic: 'gaym',
+   chron: 190504,
+   pub:    2005190406,
+   blurb: 'A fictional poem describing Mael\'s return to Cill Dara after the murder of his father....',
+
+};
+
+var MORNINGOF4202019 = {   title: 'MORNINGOF4202019',
+   locat: 'blogs/420journal2019.html',
+   topic: 'thoughts',
+   chron: 190420,
+   pub:    2005190402,
+   blurb: '4/20 2019. What went down...the day before...',
+
+};
+
+var IPODAYJOURNAL = {   title: 'IPODAYJOURNAL',
+   locat: 'blogs/ipodayjournal.html',
+   topic: 'thoughts',
+   chron: 190418,
+   pub:    2005190345,
+   blurb: 'A day in the life of a Pincuisine employee on the day of the IPO....',
+
+};
+
+
+
+var indicies = ["blogs/201111.html","blogs/201008.html","blogs/201001.html","blogs/200913.html","blogs/200910.html","blogs/200822.html","blogs/200814.html","blogs/200730.html","blogs/200714.html","blogs/200710.html","blogs/200706.html","blogs/200630.html","blogs/200621.html","blogs/200612","blogs/200606.html","blogs/200530.html","blogs/200529.html","blogs/200527.html","blogs/200525.html","blogs/200519.html","blogs/200517.html","blogs/200515.html","blogs/200510.html","blogs/200507.html","blogs/200430.html","blogs/200420.html","blogs/80sdead.html","blogs/191123.html","blogs/191122.html","blogs/190826.html","blogs/190823.html","blogs/190819.html","blogs/190816.html","blogs/190719.html","blogs/190616.html","blogs/maelreturns.html","blogs/420journal2019.html","blogs/ipodayjournal.html",];
+var obies = [DREAMJOURNAL,SARTORRESARTUS,PHALLUSFERRUS,PHOSPHINE,SMOKETWOKINDS,SUMBULLSHIT,CANTBREATHE,TWOWEEKSGONE,GOODLYTHOUSANDS,HOWTOGOSOUTH,HAPPYFOURTH,WITHOUTLOVEINTHEDREAM,SUNDAYSUMMERSOLSTICE,CANTEVENWALK,SATURDAYSUNRISE,ONTHERIOTS,DAYATSCHOOLRELEASED,IFOUNDSOMEWEED,ANDGETTINGSTONED,LETTHEREBEBLOGS,ADAYINTHELIFE,JKALLEY,ALLTHECLIPSCOMBINE,DAYATSCHOOL,MYFEETHURT,ONROWJIMMY,HEADY80SSHOWS,RAMBLINONVACATION,PLAYINJAMWRITING2,PLAYINJAMWRITING,AUGFRIDAY,SUNDAZE,AUGUST162019,JULY19RAMBLES,MYTHOUGHTS,MAELRETURNS,MORNINGOF4202019,IPODAYJOURNAL,];
+var titleindex = ['title0','title1','title2','title3','title4','title5','title6','title7','title8','title9','title10','title11','title12','title13','title14','title15','title16','title17','title18','title19','title20','title21','title22','title23','title24','title25','title26','title27','title28','title29','title30','title31','title32','title33','title34','title35','title36','title37',];
+
+function display() {
+
+	var i;
+
+	for (i = 0; i < indicies.length; i++) {
+
+		var intex = indicies[i];
+                var title = titleindex[i];
+                var objecto = obies[i];
+		document.getElementById(intex).innerHTML = objecto.blurb;
+                document.getElementById('date'+title).innerHTML = objecto.chron.toString();
+                document.getElementById(title).innerHTML = objecto.title};
+}
+
+</script>
+</head>
+
+<body onload='display();'>
+<table align=center  id="navbar">
+<tr>
+<td><a href='index.html'>HOME</a></td>
+<td>*</td>
+<td><a href='blog.html'>BLOG</a></td><td>*</td>
+<td><a href='dead.html'>GRATEFULDEAD</a></td><td>*</td>
+<td><a href='tarot.html'>TAROT</a></td><td>*</td>
+<td><a href='game.html'>GAME</a></td><td>*</td>
+<td><a href='contact.html'>CONTACT</a></td>
+</tr>
+</table>
+<br><br><br>
+<table align=center id='blogtable'>
+<tr><td><h1>TITLE</h1></td><td><h1>-</h1></td><td><h1>DATE</h1></td><td><h1>-</h1></td><td><h1>BLURB</h1></td></tr>
+<tr>
+<td><a id='title0'href='blogs/201111.html'>BLOGS/201111.HTML</a></td><td>-</td> <td><p id='datetitle0'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/201111.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title1'href='blogs/201008.html'>BLOGS/201008.HTML</a></td><td>-</td> <td><p id='datetitle1'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/201008.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title2'href='blogs/201001.html'>BLOGS/201001.HTML</a></td><td>-</td> <td><p id='datetitle2'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/201001.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title3'href='blogs/200913.html'>BLOGS/200913.HTML</a></td><td>-</td> <td><p id='datetitle3'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/200913.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title4'href='blogs/200910.html'>BLOGS/200910.HTML</a></td><td>-</td> <td><p id='datetitle4'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/200910.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title5'href='blogs/200822.html'>BLOGS/200822.HTML</a></td><td>-</td> <td><p id='datetitle5'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/200822.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title6'href='blogs/200814.html'>BLOGS/200814.HTML</a></td><td>-</td> <td><p id='datetitle6'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/200814.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title7'href='blogs/200730.html'>BLOGS/200730.HTML</a></td><td>-</td> <td><p id='datetitle7'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/200730.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title8'href='blogs/200714.html'>BLOGS/200714.HTML</a></td><td>-</td> <td><p id='datetitle8'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/200714.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title9'href='blogs/200710.html'>BLOGS/200710.HTML</a></td><td>-</td> <td><p id='datetitle9'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/200710.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title10'href='blogs/200706.html'>BLOGS/200706.HTML</a></td><td>-</td> <td><p id='datetitle10'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/200706.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title11'href='blogs/200630.html'>BLOGS/200630.HTML</a></td><td>-</td> <td><p id='datetitle11'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/200630.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title12'href='blogs/200621.html'>BLOGS/200621.HTML</a></td><td>-</td> <td><p id='datetitle12'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/200621.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title13'href='blogs/200612'>BLOGS/200612</a></td><td>-</td> <td><p id='datetitle13'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/200612'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title14'href='blogs/200606.html'>BLOGS/200606.HTML</a></td><td>-</td> <td><p id='datetitle14'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/200606.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title15'href='blogs/200530.html'>BLOGS/200530.HTML</a></td><td>-</td> <td><p id='datetitle15'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/200530.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title16'href='blogs/200529.html'>BLOGS/200529.HTML</a></td><td>-</td> <td><p id='datetitle16'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/200529.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title17'href='blogs/200527.html'>BLOGS/200527.HTML</a></td><td>-</td> <td><p id='datetitle17'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/200527.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title18'href='blogs/200525.html'>BLOGS/200525.HTML</a></td><td>-</td> <td><p id='datetitle18'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/200525.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title19'href='blogs/200519.html'>BLOGS/200519.HTML</a></td><td>-</td> <td><p id='datetitle19'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/200519.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title20'href='blogs/200517.html'>BLOGS/200517.HTML</a></td><td>-</td> <td><p id='datetitle20'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/200517.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title21'href='blogs/200515.html'>BLOGS/200515.HTML</a></td><td>-</td> <td><p id='datetitle21'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/200515.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title22'href='blogs/200510.html'>BLOGS/200510.HTML</a></td><td>-</td> <td><p id='datetitle22'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/200510.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title23'href='blogs/200507.html'>BLOGS/200507.HTML</a></td><td>-</td> <td><p id='datetitle23'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/200507.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title24'href='blogs/200430.html'>BLOGS/200430.HTML</a></td><td>-</td> <td><p id='datetitle24'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/200430.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title25'href='blogs/200420.html'>BLOGS/200420.HTML</a></td><td>-</td> <td><p id='datetitle25'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/200420.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title26'href='blogs/80sdead.html'>BLOGS/80SDEAD.HTML</a></td><td>-</td> <td><p id='datetitle26'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/80sdead.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title27'href='blogs/191123.html'>BLOGS/191123.HTML</a></td><td>-</td> <td><p id='datetitle27'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/191123.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title28'href='blogs/191122.html'>BLOGS/191122.HTML</a></td><td>-</td> <td><p id='datetitle28'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/191122.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title29'href='blogs/190826.html'>BLOGS/190826.HTML</a></td><td>-</td> <td><p id='datetitle29'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/190826.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title30'href='blogs/190823.html'>BLOGS/190823.HTML</a></td><td>-</td> <td><p id='datetitle30'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/190823.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title31'href='blogs/190819.html'>BLOGS/190819.HTML</a></td><td>-</td> <td><p id='datetitle31'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/190819.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title32'href='blogs/190816.html'>BLOGS/190816.HTML</a></td><td>-</td> <td><p id='datetitle32'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/190816.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title33'href='blogs/190719.html'>BLOGS/190719.HTML</a></td><td>-</td> <td><p id='datetitle33'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/190719.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title34'href='blogs/190616.html'>BLOGS/190616.HTML</a></td><td>-</td> <td><p id='datetitle34'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/190616.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title35'href='blogs/maelreturns.html'>BLOGS/MAELRETURNS.HTML</a></td><td>-</td> <td><p id='datetitle35'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/maelreturns.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title36'href='blogs/420journal2019.html'>BLOGS/420JOURNAL2019.HTML</a></td><td>-</td> <td><p id='datetitle36'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/420journal2019.html'>XXXXXX XXXXXX</p></td>
+</tr><tr>
+<td><a id='title37'href='blogs/ipodayjournal.html'>BLOGS/IPODAYJOURNAL.HTML</a></td><td>-</td> <td><p id='datetitle37'>XXXXXX XXXXXX</p></td><td>-</td><td><p id='blogs/ipodayjournal.html'>XXXXXX XXXXXX</p></td>
+</tr></table>
+</body>
+</html>
