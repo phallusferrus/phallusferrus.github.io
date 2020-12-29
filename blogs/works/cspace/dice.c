@@ -36,6 +36,13 @@ int main() {
 	int randCounter = 0;
 	int randReturn = 0;
 
+
+	SDL_Rect destBack;
+	destBack.w = 256;
+	destBack.h = 256;
+	destBack.x = 0;
+	destBack.y = 0;
+	
 	SDL_Rect destDie;
 	destDie.w = 128;
 	destDie.h = 128;
@@ -49,40 +56,41 @@ int main() {
 	destDie1.y = 64+56;
 
 	SDL_Rect destDie2a;
-	destDie1.w = 16;
-	destDie1.h = 16;
-	destDie1.x = 64+16;
-	destDie1.y = 64+16;
+	destDie2a.w = 16;
+	destDie2a.h = 16;
+	destDie2a.x = 64+16;
+	destDie2a.y = 64+16;
 
 	SDL_Rect destDie2b;
-	destDie1.w = 16;
-	destDie1.h = 16;
-	destDie1.x = 64+96;
-	destDie1.y = 64+96;
+	destDie2b.w = 16;
+	destDie2b.h = 16;
+	destDie2b.x = 64+96;
+	destDie2b.y = 64+96;
 
 	SDL_Rect destDie4a;
-	destDie1.w = 16;
-	destDie1.h = 16;
-	destDie1.x = 64+16;
-	destDie1.y = 64+96;
+	destDie4a.w = 16;
+	destDie4a.h = 16;
+	destDie4a.x = 64+16;
+	destDie4a.y = 64+96;
 
 	SDL_Rect destDie4b;
-	destDie1.w = 16;
-	destDie1.h = 16;
-	destDie1.x = 64+96;
-	destDie1.y = 64+16;
+	destDie4b.w = 16;
+	destDie4b.h = 16;
+	destDie4b.x = 64+96;
+	destDie4b.y = 64+16;
 
 	SDL_Rect destDie6a;
-	destDie1.w = 16;
-	destDie1.h = 16;
-	destDie1.x = 64+16;
-	destDie1.y = 64+64;
+	destDie6a.w = 16;
+	destDie6a.h = 16;
+	destDie6a.x = 64+16;
+	destDie6a.y = 64+56;
 
 	SDL_Rect destDie6b;
-	destDie1.w = 16;
-	destDie1.h = 16;
-	destDie1.x = 64+96;
-	destDie1.y = 64+64;
+	destDie6b.w = 16;
+	destDie6b.h = 16;
+	destDie6b.x = 64+96;
+	destDie6b.y = 64+56;
+	
 
 
 
@@ -112,17 +120,28 @@ int main() {
 			randCounter -= 1;
 		}
 
-		//Introz
+
+
+
 		SDL_RenderClear(ren);
+		//Background
+		
+		if (randCounter < 1) {
+			SDL_SetRenderDrawColor(ren, 0, 0, 0 ,255);
+		} else {
+			SDL_SetRenderDrawColor(ren, 255, 0, 0, 255);
+		}
+
+		SDL_RenderFillRect(ren, &destBack);
 
 
+		//Draw the Die itself
 		SDL_SetRenderDrawColor(ren, 255, 255,255, 255);
 		SDL_RenderFillRect(ren, &destDie);
+
+		//draw the dot(s)
 		SDL_SetRenderDrawColor(ren, 0, 0, 0, 255);
 		switch (randReturn) {
-			case 0:
-				SDL_RenderFillRect(ren, &destDie);
-				break;
 			case 1:
 				SDL_RenderFillRect(ren, &destDie1);
 				break;
@@ -159,16 +178,10 @@ int main() {
 				break;
 		}
 	
-
-		//Background
-		if (randCounter == 0 || randCounter == 1) {
-			SDL_SetRenderDrawColor(ren, 0, 0, 0 ,255);
-		} else {
-			SDL_SetRenderDrawColor(ren, 255, 0, 0, 255);
-		}
 		//Outroz
+		SDL_SetRenderDrawColor(ren, 0, 0, 0, 255);
 		SDL_RenderPresent(ren);
-		SDL_Delay(1000/60);
+		SDL_Delay(1000/30);
 	}
 	SDL_DestroyRenderer(ren);
 	SDL_DestroyWindow(win);
