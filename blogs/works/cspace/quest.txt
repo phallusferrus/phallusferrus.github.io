@@ -1,3 +1,10 @@
+
+Snake:
+	-Borders
+	-Score / Time
+	-Pepe Wojak theme
+	-
+
 Tetris
 Breakout
 Pac-Man

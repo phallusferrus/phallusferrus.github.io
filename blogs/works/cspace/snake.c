@@ -23,7 +23,6 @@ struct food {
 	int h;
 };
 
-
 struct snakeSeg newSeg(int on, int x, int y, int w, int h, int dir) {
 	struct snakeSeg temp;
 	temp.on = 1;
@@ -103,39 +102,43 @@ void moveSeg(struct snakeSeg *theSeg) {
 	*theSeg = temp;
 };
 
-
-
-
-/*int checkGameOver(struct snakeSeg *pSnake, int snakeLen) {
+int checkGameOver(struct snakeSeg *pSnake, int snakeLen) {
 	int i, j;
 	struct snakeSeg tempSnake[64];
-    tempSnake[64] = *pSnake;
-	printf("tempSnake[0].x:	%d\n", tempSnake[0].x);
+	struct snakeSeg *pTemp;
+	pTemp = tempSnake;
 	for (i=0;i<snakeLen;i++) {
+		*(pTemp + i) = *(pSnake + i);
+		printf("INIT TEST tempSnake[%d].x: %d\n", i, tempSnake[i].x);
+	}
+
+	for (i=0;i<snakeLen;i++) {
+		printf("TOP tempSnake[%d].x: %d\n", i, tempSnake[i].x);
 		int thisX, thisY, thatX, thatY, snakeW, snakeH;
 		snakeW = tempSnake[i].w;
 		snakeH = tempSnake[i].h;
 		thisX = tempSnake[i].x;
 		thisY = tempSnake[i].y;
-		for (j=0;i<snakeLen;j++) {
+		printf("MID tempSnake[%d].x: %d\n", i, tempSnake[i].x);
+		for (j=0;j<snakeLen;j++) {
 			thatX = tempSnake[j].x;
 			thatY = tempSnake[j].y;
-			if (j!=i) {
-				if ( (thisX >= thatX && thisX <= (thatX + snakeW) ) && (thisY >= thatY && thisY <= (thatY + snakeH) ) ) {
-					printf("COLLISHIT! WE GOT A COLLISHIT HERE\ni: %d  j: %d", i, j);
+			if (j != i ) {
+				if ( (thisX > (thatX - snakeW) && thisX < (thatX + snakeW) ) && (thisY > (thatY - snakeH) && thisY < (thatY + snakeH) ) ) {
+					printf("COLLISHIT! COL i: %d  COL j: %d\n", i, j);
 				   return 1;
 				}
 			}
 		}
+		printf("BOTTOM i: %d thisX: %d\n", i, thisX);
+		if (thisX < 0 || thisX > WINDOW_WIDTH || thisY < 0 || thisY > WINDOW_HEIGHT) {
+			printf("OUT OF BOUNDS! COL i: %d thisX: %d thisY: %d\n", i, thisX, thisY);
+			SDL_Delay(1000);
+			return 1;
+		}
 	}	
-	printf("RETURN 0 check GameOver\n");
 	return 0;
-}*/
-
-			
-		
-
-
+}
 
 
 int main() {
@@ -167,10 +170,119 @@ int main() {
 		return 1;
 	}
 
-	//Variables - SDL_Rects 
+	//Variables - Textures - SDL_Rects 
 	
+	SDL_Surface *bitmap1Surface;
+	bitmap1Surface = SDL_LoadBMP("pepesnake1.bmp");
+	if (!bitmap1Surface) {
+		printf("Error with LoadBMP: %s\n", SDL_GetError());
+		SDL_DestroyRenderer(ren);
+		SDL_DestroyWindow(win);
+		SDL_Quit();
+		return 1;
+	}
+	SDL_Texture *bitmap1Tex;
+	bitmap1Tex = SDL_CreateTextureFromSurface(ren, bitmap1Surface);
+	SDL_FreeSurface(bitmap1Surface);
+	if (!bitmap1Tex) {
+		printf("Error with CreateTextrure: %s\n", SDL_GetError());
+		SDL_DestroyRenderer(ren);
+		SDL_DestroyWindow(win);
+		SDL_Quit();
+		return 1;
+	}
+
+	SDL_Surface *bitmap2Surface;
+	bitmap2Surface = SDL_LoadBMP("pepesnake2.bmp");
+	if (!bitmap2Surface) {
+		printf("Error with LoadBMP: %s\n", SDL_GetError());
+		SDL_DestroyRenderer(ren);
+		SDL_DestroyWindow(win);
+		SDL_Quit();
+		return 1;
+	}
+	SDL_Texture *bitmap2Tex;
+	bitmap2Tex = SDL_CreateTextureFromSurface(ren, bitmap2Surface);
+	SDL_FreeSurface(bitmap2Surface);
+	if (!bitmap2Tex) {
+		printf("Error with CreateTextrure: %s\n", SDL_GetError());
+		SDL_DestroyRenderer(ren);
+		SDL_DestroyWindow(win);
+		SDL_Quit();
+		return 1;
+	}
+
+	SDL_Surface *bitmap3Surface;
+	bitmap3Surface = SDL_LoadBMP("pepesnake3.bmp");
+
+	if (!bitmap3Surface) {
+		printf("Error with LoadBMP: %s\n", SDL_GetError());
+		SDL_DestroyRenderer(ren);
+		SDL_DestroyWindow(win);
+		SDL_Quit();
+		return 1;
+	}
+
+	SDL_Texture *bitmap3Tex;
+	bitmap3Tex = SDL_CreateTextureFromSurface(ren, bitmap3Surface);
+	SDL_FreeSurface(bitmap3Surface);
+	if (!bitmap3Tex) {
+		printf("Error with CreateTextrure: %s\n", SDL_GetError());
+		SDL_DestroyRenderer(ren);
+		SDL_DestroyWindow(win);
+		SDL_Quit();
+		return 1;
+	}
+
+
+	SDL_Surface *bitmap4Surface;
+	bitmap4Surface = SDL_LoadBMP("pepesnake4.bmp");
+
+	if (!bitmap4Surface) {
+		printf("Error with LoadBMP: %s\n", SDL_GetError());
+		SDL_DestroyRenderer(ren);
+		SDL_DestroyWindow(win);
+		SDL_Quit();
+		return 1;
+	}
+
+	SDL_Texture *bitmap4Tex;
+	bitmap4Tex = SDL_CreateTextureFromSurface(ren, bitmap4Surface);
+	SDL_FreeSurface(bitmap4Surface);
+	if (!bitmap4Tex) {
+		printf("Error with CreateTextrure: %s\n", SDL_GetError());
+		SDL_DestroyRenderer(ren);
+		SDL_DestroyWindow(win);
+		SDL_Quit();
+		return 1;
+	}
+
+	SDL_Surface *bitmapFoodSurface;
+	bitmapFoodSurface = SDL_LoadBMP("soifood.bmp");
+
+	if (!bitmapFoodSurface) {
+		printf("Error with LoadBMP: %s\n", SDL_GetError());
+		SDL_DestroyRenderer(ren);
+		SDL_DestroyWindow(win);
+		SDL_Quit();
+		return 1;
+	}
+
+	SDL_Texture *bitmapFoodTex;
+	bitmapFoodTex = SDL_CreateTextureFromSurface(ren, bitmapFoodSurface);
+	SDL_FreeSurface(bitmapFoodSurface);
+	if (!bitmapFoodTex) {
+		printf("Error with CreateTextrure: %s\n", SDL_GetError());
+		SDL_DestroyRenderer(ren);
+		SDL_DestroyWindow(win);
+		SDL_Quit();
+		return 1;
+	}
+
 	int close_requested = 0;
 	int gameOver = 0;
+	int timeScale = 2;
+	int moveMade = 0;
 	int snakeLen = 0;
 	int *lenP;
 	lenP = &snakeLen;
@@ -211,7 +323,6 @@ int main() {
 	pFood = &theFood;
 
 
-
 	//SDL RECT objects
 	SDL_Rect destBack;
 	destBack.w = WINDOW_WIDTH;
@@ -222,6 +333,11 @@ int main() {
 	SDL_Rect destSnake;
 	destSnake.w = 16;
 	destSnake.h = 16;
+
+	SDL_QueryTexture(bitmap1Tex, NULL, NULL, &destSnake.w, &destSnake.h);
+	SDL_QueryTexture(bitmap2Tex, NULL, NULL, &destSnake.w, &destSnake.h);
+	SDL_QueryTexture(bitmap3Tex, NULL, NULL, &destSnake.w, &destSnake.h);
+	SDL_QueryTexture(bitmap4Tex, NULL, NULL, &destSnake.w, &destSnake.h);
 
 	SDL_Rect destFood;
 	destFood.x = pFood->x;
@@ -244,16 +360,28 @@ int main() {
 				case SDL_KEYDOWN:
 					switch (event.key.keysym.scancode) {
 						case SDL_SCANCODE_W:
-							theSnake[0].dir = 1;
+							if (theSnake[0].dir != 3 && moveMade == 0) {
+								theSnake[0].dir = 1;
+								moveMade++;
+							}
 							break;
 						case SDL_SCANCODE_D:
-							theSnake[0].dir = 2;
+							if (theSnake[0].dir != 4 && moveMade == 0) {
+								theSnake[0].dir = 2;
+								moveMade++;
+							}
 							break;
 						case SDL_SCANCODE_S:
-							theSnake[0].dir = 3;
+							if (theSnake[0].dir != 1 && moveMade == 0) {
+								theSnake[0].dir = 3;
+								moveMade++;
+							}
 							break;
 						case SDL_SCANCODE_A:
-							theSnake[0].dir = 4;
+							if (theSnake[0].dir != 2 && moveMade == 0) {
+								theSnake[0].dir = 4;
+								moveMade++;
+							}
 							break;
 					}
 			}
@@ -283,7 +411,8 @@ int main() {
 		
 		//draw snake
 
-		SDL_SetRenderDrawColor(ren, 0, 0, 255, 255);
+		//train
+		SDL_SetRenderDrawColor(ren, 72, 130, 1, 255);
 		for (i=0; i<snakeLen; i++) {
 			struct snakeSeg thisSeg = theSnake[i];
 			struct snakeSeg *theSeg;
@@ -292,26 +421,66 @@ int main() {
 			destSnake.y = thisSeg.y;
 			SDL_RenderFillRect(ren, &destSnake);
 		}
+		
+		//head
+
+		destSnake.x = pp->x;
+		destSnake.y = pp->y;
+
+		if (pp->dir == 1) {
+			SDL_RenderCopy(ren, bitmap1Tex, NULL, &destSnake);
+		} else if (pp->dir == 2) {
+			SDL_RenderCopy(ren, bitmap2Tex, NULL, &destSnake);
+		} else if (pp->dir == 3) {
+			SDL_RenderCopy(ren, bitmap3Tex, NULL, &destSnake);
+		} else if (pp->dir == 4) {
+			SDL_RenderCopy(ren, bitmap4Tex, NULL, &destSnake);
+		} else {
+			printf("ERRRRRRRROOOOOOOORRRRRRRRR pp->dir is BAAAD\n");
+			SDL_Delay(3000);
+		}
 
 		//draw food
+		SDL_RenderCopy(ren, bitmapFoodTex, NULL, &destFood);
 
-		SDL_SetRenderDrawColor(ren, 0, 255, 0, 255);
-		SDL_RenderFillRect(ren, &destFood);
 
 		//check collisions
-		//
-	//	int gameOver = checkGameOver(pSnake, snakeLen);
-		//collisionDetected = checkCollision(theSnake[], theFood);
 
+		//check game over snake collision
+		int gameOver = checkGameOver(pSnake, snakeLen);
+		if (gameOver) {
+			printf("GAME OVER END\n");
+		}
+
+		//check snakeGrow food collision
+
+
+		if ( ( (pp->x >= (pFood->x - pFood->w) ) && (pp->x <= (pFood->x + pFood->w))) &&
+				(pp->y >= (pFood->y - pFood->h)) && (pp->y <= (pFood->y + pFood->h))) {
+			snakeGrow(lenP, theSnake[snakeLen]);
+			theFood = spawnFood();
+			destFood.x = pFood->x;
+			destFood.y = pFood->y;
+			printf("foodCollision\n");
+			timeScale++;
+		}
 
 		//Render Present
+		//
 		SDL_SetRenderDrawColor(ren, 0, 0, 0, 255);
 		SDL_RenderPresent(ren);
 
 		//LOOP Wait & printf TEST shit
-		SDL_Delay(1000/2);
-		printf("SEG - X Y dir\nSeg1: %d  %d  %d\nseg2: %d %d %d\n", theSnake[0].x, theSnake[0].y, theSnake[0].dir, theSnake[1].x, theSnake[1].y, theSnake[1].dir);
-		printf("snake Len: %d\n", snakeLen);
+		
+		SDL_Delay(1000/timeScale);	
+		moveMade = 0;
+	//	printf("SEG - X Y dir\nSeg1: %d  %d  %d\nseg2: %d %d %d\n", theSnake[0].x, theSnake[0].y, theSnake[0].dir, theSnake[1].x, theSnake[1].y, theSnake[1].dir);
+		for(i=0;i<snakeLen;i++) {
+			struct snakeSeg testSeg;
+			testSeg = theSnake[i];
+			printf("Seg%d:	X: %d	Y: %d	DIR: %d\n", i, testSeg.x, testSeg.y, testSeg.dir);
+		}
+		printf("snake Len: %d\nXXXXXXXXXXXXXXXXXXXXXXX\nTEST theSnake[1].x: %d\n", snakeLen, theSnake[1].x);
 	}
 
 
@@ -320,6 +489,7 @@ int main() {
 	SDL_DestroyWindow(win);
 	SDL_Quit();
 
+	
 	//Outta Here
 	printf("ALL DONE :)\n");
 	return 0;
