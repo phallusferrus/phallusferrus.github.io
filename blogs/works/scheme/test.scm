@@ -79,4 +79,10 @@
 
 (display (return-square-of-two-largest 11 24 32))
 (newline)
+(display (return-square-of-two-largest 1 3 5))
+
+(newline)
+
+
+  
 

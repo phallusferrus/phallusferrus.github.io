@@ -3,7 +3,7 @@ import vlc
 import random
 
 
-song_choice = "/home/sequoia/Desktop/Kalen-Music/nrps1969-08-07.sbd.unk.sirmick.flac16/nrps1969-08-07t13.flac"
+song_choice = "/home/qwe/Music/NirvanaUnplugged.opus"
 executed = 0
 
 hour = input("Hour: ")
